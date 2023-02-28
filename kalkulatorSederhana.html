@@ -1,0 +1,50 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <script language="Javascript">
+        //<!--
+        function test() {
+            var kalkulator = document.form;
+            var x=eval(kalkulator.x.value);
+            var y=eval(kalkulator.y.value);
+            var pil=kalkulator.opt.value;
+            if (pil=="+") {
+                var z = x+y;
+            }else if (pil=="-") {
+                var z = x-y;
+            }else if (pil=="*") {
+                var z = x*y;
+            }else if (pil=="/") {
+                var z = x/y;
+            }
+            kalkulator.hasil.value=z;
+            kalkulator.x.value="";
+            kalkulator.y.value="";
+        }
+        function kosongkan() {
+            document.form.reset();
+        }
+        //->
+    </script>
+    <div align="center">
+        <form name="form" action="#">
+            <p>bil 1 <input type="text" name="x"></p>
+            <p>bil 2 <input type="text" name="y"></p>
+            <p>hasil <input type="text" name="hasil" disabled="true"></p>
+            <p>operasi <select name="opt"></p>
+                <option value="+"> + (tambah) </option>
+                <option value="-"> - (kurang) </option>
+                <option value="*"> * (kali) </option>
+                <option value="/"> / (bagi) </option>
+            </select>
+            <input type="button" value="=" onclick=test()>
+            <input type="button" value="CLEAR" onclick=kosongkan()>
+        </form>
+    </div>
+</body>
+</html>
